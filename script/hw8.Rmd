@@ -2,7 +2,7 @@
 title: "hw8"
 author: "QRME Cohort!"
 date: "11/10/2021"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
