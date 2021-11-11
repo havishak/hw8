@@ -36,6 +36,7 @@ library(rio)
 library(readr)
 library(psych)
 library(magrittr)
+library (knitr)
 ```
 
 ```{r}
@@ -45,11 +46,7 @@ star <- import(here("data", "star.csv"), setclass = "tbl_df") %>%
 star
 ```
 
-```{r}
-
-```
-
-Summary statistics for students based on sex and free reduced lunch status:
+**Summary statistics for students based on sex and free reduced lunch status**
 
 *On average, students with free/reduced lunch status regardless of their sex performed lower than their peers.*
 
@@ -60,7 +57,8 @@ sum <- star %>%
            math_sd = sd(tmathss),
            rdg_mean = mean(treadss),
            rdg_sd = sd(treadss)) %>%
-    mutate_if(is.numeric, round, digits=2)
+      kable(digits = 2,
+        booktabs = TRUE)
 sum
 ```
 
