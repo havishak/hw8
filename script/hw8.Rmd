@@ -2,13 +2,15 @@
 title: "hw8"
 author: "QRME Cohort!"
 date: "11/10/2021"
-output: 
-  pdf_document:
-  toc: true
+output:
+  pdf_document: null
+  toc: yes
   toc_depth: 3
-  toc_float: true
+  toc_float: yes
   code_folding: hide
   highlight: tango
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -45,5 +47,20 @@ star
 
 ```{r}
 
+```
+
+Summary statistics for students based on sex and free reduced lunch status:
+
+*On average, students with free/reduced lunch status regardless of their sex performed lower than their peers.*
+
+```{r summary-stats, echo=FALSE}
+sum <- star %>% 
+    group_by(sex, frl) %>% 
+    summarize(math_mean = mean(tmathss),
+           math_sd = sd(tmathss),
+           rdg_mean = mean(treadss),
+           rdg_sd = sd(treadss)) %>%
+    mutate_if(is.numeric, round, digits=2)
+sum
 ```
 
