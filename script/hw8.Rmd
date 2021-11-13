@@ -1,16 +1,21 @@
 ---
-title: "hw8"
+title: "Lab_8"
 author: "QRME Cohort!"
 date: "11/10/2021"
 output:
-  pdf_document: null
-  toc: yes
-  toc_depth: 3
-  toc_float: yes
-  code_folding: hide
-  highlight: tango
-  html_document:
+  pdf_document: 
+    toc: true
+    toc_depth: 3
+    highlight: tango
     df_print: paged
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    highlight: tango
+    df_print: paged
+    code_hiding: true
+      
 ---
 
 ```{r setup, include=FALSE}
@@ -21,36 +26,50 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.height = 8)
 ```
 
-## R Markdown
+# Commit 1
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-```{r}
+```{r load library}
 library(tinytex)
 library(here)
 library(janitor)
-library(ggplot2)
-library(tidyverse)
-library(dplyr)
 library(rio)
+<<<<<<< HEAD
 library(readr)
 library(psych)
 library(magrittr)
 library (knitr)
 ```
+=======
+library (knitr)
+library(tidyverse) #ggplot2 and dplyr are already present in tidyverse
+>>>>>>> master
 
-```{r}
+# These packages are not used here
+#library(dplyr)
+#library(ggplot2)
+#library(readr) 
+#library(psych)
+#library(magrittr)
+
+theme_set(theme_minimal())
+```
+
+<<<<<<< HEAD
+=======
+```{r load data}
 star <- import(here("data", "star.csv"), setclass = "tbl_df") %>%
   clean_names()
 
-star
+kable(head(star, 10)) #without kable this doesn't get printed in pdf
 ```
+# Commit 3
 
+>>>>>>> master
 **Summary statistics for students based on sex and free reduced lunch status**
 
 *On average, students with free/reduced lunch status regardless of their sex performed lower than their peers.*
 
-```{r summary-stats, echo=FALSE}
+```{r summary-stats}
 sum <- star %>% 
     group_by(sex, frl) %>% 
     summarize(math_mean = mean(tmathss),
@@ -61,4 +80,26 @@ sum <- star %>%
         booktabs = TRUE)
 sum
 ```
+# Commit 4
+
+```{r plot}
+ggplot(star, aes(x = totexp, y = tmathss)) +
+    geom_point(color = "gray", alpha = 0.8) +
+    geom_smooth(aes(color = frl), method = "lm") +
+    labs(x = "Teacher Experience (in years)",
+           y = "Total Math Scale Score",
+           title = "Relation between teacher experience and math scores",
+           subtitle = "Separate regression lines displayed by free/reduced price lunch status",
+           color = "Lunch Status") +
+    scale_color_manual(labels = c("Paid meals","Free/reduced price meals"),
+                        values = c("lightcoral", "mediumturquoise"))+
+    theme(legend.position="bottom") 
+```
+**Description:**
+
+1. Though the regression lines have a positive slope, it almost looks flat. We can say that teacher's experience doesn't have much affect on student's math scale scores.    
+
+2. Students with a lunch status of "Paid meals" score more than those on "Free/reduced price meals" status.
+
+
 
