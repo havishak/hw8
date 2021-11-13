@@ -8,13 +8,6 @@ output:
     toc_depth: 3
     highlight: tango
     df_print: paged
-  html_document:
-    toc: true
-    toc_float: true
-    toc_depth: 3
-    highlight: tango
-    df_print: paged
-    code_hiding: true
 bibliography: hw8references.bib    
 ---
 
@@ -29,13 +22,10 @@ knitr::opts_chunk$set(echo = FALSE,
 # Commit 1
 
 ```{r load library}
-library(tinytex)
+
 library(here)
 library(janitor)
 library(rio)
-library(readr)
-library(psych)
-library(magrittr)
 library (knitr)
 library(tidyverse) #ggplot2 and dplyr are already present in tidyverse
 
@@ -45,6 +35,7 @@ library(tidyverse) #ggplot2 and dplyr are already present in tidyverse
 #library(readr) 
 #library(psych)
 #library(magrittr)
+#library(tinytex)
 
 theme_set(theme_minimal())
 ```
@@ -100,5 +91,6 @@ ggplot(star, aes(x = totexp, y = tmathss)) +
 
 2. Students with a lunch status of "Paid meals" score more than those on "Free/reduced price meals" status.
 
-# References
+
+\newpage # References
 
