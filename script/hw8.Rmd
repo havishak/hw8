@@ -15,7 +15,7 @@ output:
     highlight: tango
     df_print: paged
     code_hiding: true
-      
+bibliography: hw8references.bib    
 ---
 
 ```{r setup, include=FALSE}
@@ -33,16 +33,11 @@ library(tinytex)
 library(here)
 library(janitor)
 library(rio)
-<<<<<<< HEAD
 library(readr)
 library(psych)
 library(magrittr)
 library (knitr)
-```
-=======
-library (knitr)
 library(tidyverse) #ggplot2 and dplyr are already present in tidyverse
->>>>>>> master
 
 # These packages are not used here
 #library(dplyr)
@@ -54,17 +49,21 @@ library(tidyverse) #ggplot2 and dplyr are already present in tidyverse
 theme_set(theme_minimal())
 ```
 
-<<<<<<< HEAD
-=======
 ```{r load data}
 star <- import(here("data", "star.csv"), setclass = "tbl_df") %>%
   clean_names()
 
 kable(head(star, 10)) #without kable this doesn't get printed in pdf
 ```
+
+# Commit 2
+
+Prior literature that explores environmental factors that influence academic achievement
+finds that economic status [@barry2006effect] [@considine2002influence] and gender [@hubbard2005role] [@kukulu2013self] 
+significantly influences academic achievement
+
 # Commit 3
 
->>>>>>> master
 **Summary statistics for students based on sex and free reduced lunch status**
 
 *On average, students with free/reduced lunch status regardless of their sex performed lower than their peers.*
@@ -101,5 +100,5 @@ ggplot(star, aes(x = totexp, y = tmathss)) +
 
 2. Students with a lunch status of "Paid meals" score more than those on "Free/reduced price meals" status.
 
-
+# References
 
