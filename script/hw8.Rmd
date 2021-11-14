@@ -8,7 +8,8 @@ output:
     toc_depth: 3
     highlight: tango
     df_print: paged
-bibliography: hw8references.bib    
+bibliography: hw8references.bib 
+csl: chicago-annotated-bibliography.csl
 ---
 
 ```{r setup, include=FALSE}
@@ -26,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE,
 library(here)
 library(janitor)
 library(rio)
-library (knitr)
+library(knitr)
 library(tidyverse) #ggplot2 and dplyr are already present in tidyverse
 
 # These packages are not used here
