@@ -57,7 +57,7 @@ significantly influences academic achievement
 
 **Summary statistics for students based on sex and free reduced lunch status**
 
-*On average, students with free/reduced lunch status regardless of their sex performed lower than their peers.*
+*On average, students from low-income families with free/reduced lunch status regardless of their sex scored lower both in Math and Reading test than their higher-income peers.*
 
 ```{r summary-stats}
 sum <- star %>% 
