@@ -1,5 +1,5 @@
-\contentsline {section}{Commit 1}{1}{section*.2}%
-\contentsline {section}{Commit 2}{1}{section*.3}%
-\contentsline {section}{Commit 3}{2}{section*.4}%
-\contentsline {section}{Commit 4}{3}{section*.5}%
-\contentsline {section}{References}{5}{section*.6}%
+\contentsline {section}{Commit 1}{2}{section*.2}%
+\contentsline {section}{Commit 2}{3}{section*.3}%
+\contentsline {section}{Commit 3}{4}{section*.4}%
+\contentsline {section}{Commit 4}{5}{section*.5}%
+\contentsline {section}{References}{7}{section*.6}%
