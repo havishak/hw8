@@ -9,7 +9,7 @@ output:
     highlight: tango
     df_print: paged
 bibliography: hw8references.bib 
-csl: chicago-annotated-bibliography.csl
+#csl: chicago-annotated-bibliography.csl
 ---
 
 ```{r setup, include=FALSE}
