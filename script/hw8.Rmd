@@ -51,8 +51,10 @@ kable(head(star, 10)) #without kable this doesn't get printed in pdf
 \newpage # Commit 2
 
 Prior literature that explores environmental factors that influence academic achievement
-finds that economic status [@barry2006effect] [@considine2002influence] and gender [@hubbard2005role] [@kukulu2013self] 
+finds that economic status [@barry2006effect; @considine2002influence] and gender [@hubbard2005role; @kukulu2013self] 
 significantly influences academic achievement. 
+
+@barry2006effect shows correlation between economic status and academic achievement in their study.
 
 This paper utilized here [@herepackage], janitor [@janitorpackage], rio [@riopackage], knitr [@knitrpackage], and tidyverse [@tidyversepackage] packages from R for data cleaning and analysis. 
 
